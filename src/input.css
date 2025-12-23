@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Tahoma;
+    src: url(tahoma.woff2) format("woff2")
+}
+
+section {
+    background-image: url(images/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#start #starticon{
+    font-family: inter;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(#7fbf4d, #4f8f2f);
+    border: 1px solid #3a6f22;
+    border-radius: 12px;
+    padding: 4px 12px;
+    text-shadow: 0 -1px 0 #0a246a;
+    -webkit-font-smoothing: none;
+}
