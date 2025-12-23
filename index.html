@@ -14,7 +14,7 @@
     <section class="h-screen w-screen bg-neutral-600">
         <div class="absolute bottom-0 left-0 ">
             <div class="relative">
-                <div id="start" class="bg-[#3B77BC] w-screen min-h-[5vh] flex">
+                <div id="start" class="bg-[#3B77BC] w-screen min-h-[5vh] flex cursor-default">
                     <p id="starticon"
                         class="font-bold italic max-h-full min-h-fit  flex flex-wrap items-center rounded-e-full">
                         <img src="src/images/winicon.png" class="pe-1 min-h-[4vh]" alt="">
@@ -22,23 +22,28 @@
                     </p>
                 </div>
                 <div id="start-menu"
-                    class=" absolute top-0 left-0 -translate-y-full h-[50vh] min-w-[30vw] max-w-[50vw] rounded-t-2xl  overflow-hidden">
-                    <div class="relative h-full w-full">
-                        <div class="max-h-fit flex p-3 pe-10 items-center inter " id="start-usermenu">
+                    class="hidden absolute top-0 left-0 -translate-y-full min-h-[50vh] min-w-[30vw] max-w-screen rounded-t-2xl  overflow-hidden">
+                    <div class="relative
+                        before:pointer-events-none
+                        before:absolute before:inset-0
+                        before:shadow-[inset_0_-5_40px_10px_rgba(9,74,189,0.66)]
+                        before:content-['']
+                        flex flex-col
+                        min-h-[50vh] min-w-[30vw] max-w-[50vw]
+                    ">
+                        <div class="flex shrink-0 p-3 pe-10 items-center inter " id="start-usermenu">
                             <img src="src/images/profile.jpg"
                                 class="border-2 border-[#CCD6EB] rounded-[5px] w-1/12 h-auto me-5" alt="">
                             <p class="text-2xl text-white inter font-semibold"
                                 style="text-shadow: 1px 2px 3px #00000080;">
                                 Pistachhh</p>
                         </div>
-                        <div class="bg-white flex">
-                            <div class="w-1/2 min-h-full bg-blue-200">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Omnis, aut.</div>
-                            <div class="w-1/2 min-h-full bg-blue-300">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Omnis, aut.</div>
+                        <div class="bg-white  flex flex-1">
+                            <div class="w-1/2 min-h-full "
+                                style="border: 1px solid linear-gradient(0deg, #91A3D9 0%, #738BD0 100%)"></div>
+                            <div class="w-1/2 min-h-full " style="background: linear-gradient()"></div>
                         </div>
-                        <div class="h-auto absolute bottom-0 left-0 w-full flex gap-x-5 py-3 tahoma justify-end"
-                            id="start-powermenu">
+                        <div class="w-full flex shrink-0 gap-x-5 py-3 tahoma justify-end" id="start-powermenu">
                             <p class="text-white flex items-center gap-1 ">
                                 <img src="src/images/logoff.png" class="w-1/4 h-auto" alt="">
                                 Log off
@@ -53,6 +58,8 @@
             </div>
         </div>
     </section>
+
+    <script src="src/script.js"></script>
 </body>
 
 </html>
