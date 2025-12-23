@@ -6,8 +6,9 @@
 }
 @font-face {
     font-family: 'Tahoma';
-    src: url('tahoma.woff2') format('woff2'); 
+    src: url('Tahoma.woff2') format('woff2'),
+        url('Tahoma.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-} 
+}

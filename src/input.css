@@ -1,11 +1,9 @@
 @import "tailwindcss";
-
-@font-face {
-    font-family: Tahoma;
-    src: url(tahoma.woff2) format("woff2")
-}
 .inter {
     font-family: 'Inter', sans-serif;
+}
+.tahoma {
+    font-family: 'Tahoma', sans-serif;
 }
 section {
     background-image: url(images/wallpaper.jpg);
