@@ -4,7 +4,9 @@
     font-family: Tahoma;
     src: url(tahoma.woff2) format("woff2")
 }
-
+.inter {
+    font-family: 'Inter', sans-serif;
+}
 section {
     background-image: url(images/wallpaper.jpg);
     background-size: cover;
@@ -13,13 +15,23 @@ section {
 
 #start #starticon{
     font-family: inter;
-    font-size: 11px;
     font-weight: bold;
     color: #fff;
     background: linear-gradient(#7fbf4d, #4f8f2f);
     border: 1px solid #3a6f22;
-    border-radius: 12px;
-    padding: 4px 12px;
+    /* border-radius: 12px; */
+    padding: 4px 18px 4px 10px;
     text-shadow: 0 -1px 0 #0a246a;
     -webkit-font-smoothing: none;
+}
+#start-menu{
+    background: linear-gradient(0deg, #74AAE8 0%, #1969D2 1%, #2174DB 6%, #4792EC 13%, #448BE3 92%, #2577DF 96%, #0D5BC7 100%);
+    border: 2px solid #215CC5;
+}
+
+#start-usermenu{
+    background: linear-gradient(180deg, #67A2E7 0%, #74AAE8 4%,  #1969D2 6%,  #0C60CB 17%,  #0C60CB 24%, #186AD1 43%,  #2474DB 60%,  #3382E4 78%,  #4792EC 100%);
+}
+#start-powermenu{
+    background: linear-gradient(0deg, #67A2E7 0%, #74AAE8 4%,  #1969D2 6%,  #0C60CB 17%,  #0C60CB 24%, #186AD1 43%,  #2474DB 60%,  #3382E4 78%,  #4792EC 100%);
 }
