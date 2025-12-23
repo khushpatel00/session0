@@ -166,9 +166,6 @@
   }
 }
 @layer utilities {
-  .visible {
-    visibility: visible;
-  }
   .absolute {
     position: absolute;
   }
@@ -198,9 +195,6 @@
   }
   .h-auto {
     height: auto;
-  }
-  .h-full {
-    height: 100%;
   }
   .h-screen {
     height: 100vh;
@@ -244,20 +238,11 @@
   .max-w-\[50vw\] {
     max-width: 50vw;
   }
-  .max-w-fit {
-    max-width: fit-content;
-  }
-  .max-w-full {
-    max-width: 100%;
-  }
   .max-w-screen {
     max-width: 100vw;
   }
   .min-w-\[30vw\] {
     min-width: 30vw;
-  }
-  .min-w-screen {
-    min-width: 100vw;
   }
   .flex-1 {
     flex: 1;
@@ -273,10 +258,6 @@
   }
   .-translate-y-full {
     --tw-translate-y: -100%;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-y-0 {
-    --tw-translate-y: calc(var(--spacing) * 0);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .cursor-default {
@@ -396,13 +377,6 @@
     &::before {
       content: var(--tw-content);
       --tw-shadow: inset 0 -5 40px 10px var(--tw-shadow-color, rgba(9,74,189,0.66));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .before\:shadow-\[inset_0_0_20px_rgba\(0\,0\,0\,0\.5\)\] {
-    &::before {
-      content: var(--tw-content);
-      --tw-shadow: inset 0 0 20px var(--tw-shadow-color, rgba(0,0,0,0.5));
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
