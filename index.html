@@ -11,6 +11,7 @@
 </head>
 
 <body class="bg-white">
+
     <section class="h-screen w-screen bg-neutral-600">
         <div class="absolute bottom-0 left-0 ">
             <div class="relative">
@@ -22,7 +23,7 @@
                     </p>
                 </div>
                 <div id="start-menu"
-                    class="absolute top-0 left-0 -translate-y-full min-h-[50vh] min-w-[30vw] max-w-screen rounded-t-2xl  overflow-hidden">
+                    class="absolute bottom-full left-0 min-h-[50vh] max-h-[90vh] min-w-[30vw] max-w-screen rounded-t-2xl  overflow-hidden">
                     <div class="relative
                         before:pointer-events-none
                         before:absolute before:inset-0
@@ -38,20 +39,21 @@
                                 style="text-shadow: 1px 2px 3px #00000080;">
                                 Pistachhh</p>
                         </div>
-                        <div class="bg-white flex flex-1">
+                        <div class="bg-white flex flex-1 relative overflow-y-scroll">
+                            <div class="absolute top-0 left-0 w-full h-0.5 line-top"></div>
                             <div class="w-1/2 min-h-full ">
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Internet Explorer.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
                                         <p class="tahoma tracking-wide font-bold">Internet</p>
-                                        <p class="tahoma font-extralight text-sm">Internet Explorer</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Internet Explorer</p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Email.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
                                         <p class="tahoma tracking-wide font-bold">E-Mails</p>
-                                        <p class="tahoma font-extralight text-sm">Outlook Express</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Outlook Express</p>
                                     </div>
                                 </div>
 
@@ -59,44 +61,44 @@
                                 <div class="line h-0.5 w-full my-1 mx-2"></div>
 
 
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Windows Media Player.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">Windows Media Player</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Windows Media Player</p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Microsoft News.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">MSN</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">MSN</p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Messenger.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">Windows Messenger</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Windows Messenger</p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Windows Guided Tour.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">Windows XP Tour</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Windows XP Tour</p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Transfert Wizzard.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">Files and Setting Transfer Wizard </p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Files and Setting Transfer Wizard </p>
                                     </div>
                                 </div>
-                                <div class="ps-2 flex flex-wrap items-center">
+                                <div class="ps-2 flex items-center">
                                     <img src="src/images/Visual Keyboard.png" class="w-[12%] py-1" alt="">
                                     <div class="ps-2 py-1.5 ">
-                                        <p class="tahoma font-extralight text-sm">Paint</p>
+                                        <p class="tahoma font-extralight leading-3.5 text-sm">Paint</p>
                                     </div>
                                 </div>
                                 <div class="line h-0.5 w-full my-1 mx-2"></div>
-                                <div class="ps-2 flex flex-wrap justify-end items-center">
+                                <div class="ps-2 flex justify-end items-center">
                                     <div class="pe-1 py-1.5">
                                         <p class="tahoma font-black tracking-wider ">All Programs</p>
                                     </div>
@@ -106,7 +108,7 @@
                             </div>
 
 
-                            <div class="w-1/2 min-h-full bg-[#D3E5FA]"></div>
+                            <div class="w-1/2 min-h-full bg-[#D3E5FA] border-s-[#95BDEE] border-s-4"></div>
                         </div>
                         <div class="w-full flex shrink-0 gap-x-5 py-3 tahoma justify-end" id="start-powermenu">
                             <p class="text-white flex items-center gap-1 ">

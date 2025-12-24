@@ -40,7 +40,10 @@ section {
 }
 
 .line {
-    background: linear-gradient(90deg, #D3D3C800 0%, #D3D3C880 50%, #D3D3C800 100%);
+    background: linear-gradient(90deg, #D3D3C800 0%, #D3D3C8 50%, #D3D3C800 100%);
+}
+.line-top {
+    background: linear-gradient(90deg, #FF8A1D00 0%, #FF8A1D 50%, #FF8A1D00 100%);
 }
 
 *::-webkit-scrollbar-button {
