@@ -46,7 +46,7 @@ function Desktop({ isLoggedIn }) {
 
     return (
         <div id='desktop' className='desktopWallpaper w-screen h-screen relative overflow-hidden overflow-y-hidden scale-[110%]'>
-            <div ref={desktopblur} id='desktopblur' className='w-full h-full duration-500 backdrop-blur-xl'>
+            <div ref={desktopblur} id='desktopblur' className='w-full h-full duration-200 backdrop-blur-xl'>
                 <ActivityBar className='activity-bar translate-y-full hidden' />
                 <div className='absolute'>
                     <Window className='rounded-sm overflow-hidden window opacity-0'></Window>
