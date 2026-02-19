@@ -4,7 +4,11 @@
     overflow: hidden;
 }
 
-#desktop {
+html{
+    overflow: hidden;
+}
+
+.desktopWallpaper {
     background-image: url('/car_on_mars.jpg');
     background-size: cover;
     background-position: center left;

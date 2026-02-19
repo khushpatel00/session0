@@ -7,7 +7,7 @@ import GlobalShortcuts from './assets/Logic/GlobalShortcuts';
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   return (
-    <div id='OS'>
+    <div id='OS' className='overflow-hidden'>
       {/* <Desktop /> */}
       <GlobalShortcuts />
       <Routes>
