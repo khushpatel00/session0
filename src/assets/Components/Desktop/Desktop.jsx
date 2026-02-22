@@ -4,6 +4,7 @@ import Window from './Windows/Window'
 import { motion } from 'motion/react'
 import gsap from 'gsap'
 import { useNavigate } from 'react-router'
+import Icons from './Icons/Icons'
 function Desktop({ isLoggedIn }) {
     const navigate = useNavigate();
     const desktopblur = useRef(null);
@@ -39,18 +40,14 @@ function Desktop({ isLoggedIn }) {
             delay: 0.2,
         }, 'sync')
     }, [])
-
-    document.addEventListener('keydown', (e) => {
-
-    })
-
     return (
         <div id='desktop' className='desktopWallpaper w-screen h-screen relative overflow-hidden overflow-y-hidden scale-[110%]'>
             <div ref={desktopblur} id='desktopblur' className='w-full h-full duration-200 backdrop-blur-xl'>
                 <ActivityBar className='activity-bar translate-y-full hidden' />
-                <div className='absolute'>
-                    <Window className='rounded-sm overflow-hidden window opacity-0'></Window>
+                <div className='absolute z-10 pointer-events-none'>
+                    <Window className='rounded-sm overflow-hidden window opacity-0 pointer-events-auto'></Window>
                 </div>
+                <Icons className='absolute'></Icons>
             </div>
         </div>
     )
