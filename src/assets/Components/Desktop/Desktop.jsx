@@ -10,7 +10,7 @@ function Desktop({ isLoggedIn }) {
     const desktopblur = useRef(null);
 
     console.log(isLoggedIn)
-    if (isLoggedIn == false) navigate('/')
+    if (isLoggedIn === false) navigate('/')
     useEffect(() => {
         // if(tl) tl.kill();
         let tl = gsap.timeline();
