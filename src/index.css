@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 
-html{
+html {
     overflow: hidden;
 }
 
@@ -26,6 +26,13 @@ html{
 
 .jet {
     font-family: JetBrains Mono, monospace;
+}
+
+.loginform>input:focus {
+    .inputv {
+        border: 3px white solid;
+        border-radius: 50px;
+    }
 }
 
 .react-clock {

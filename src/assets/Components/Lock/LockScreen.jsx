@@ -20,6 +20,7 @@ const LockScreen = ({setLoggedIn}) => {
 
     useEffect(() => {
         const interval = setInterval(() => setValue(new Date()), 1000);
+        inputRef.current.focus();
         return () => {
             clearInterval(interval);
         };
@@ -27,8 +28,8 @@ const LockScreen = ({setLoggedIn}) => {
     useEffect(() => {
         gsap.to('.passwordchar', {
             opacity: 1,
-            duration: 0.05,
-            ease: 'elastic.in',
+            duration: 0.15,
+            ease: 'elastic.out',
             width: 12,
             height: 12,
         })
@@ -46,10 +47,16 @@ const LockScreen = ({setLoggedIn}) => {
             }, 300)
         }
     }
+
+    const formsession = (e) => {
+        e.preventDefault();
+        authenticateSession();
+    }
+
     return (
         <>
             <div id='lockscreen' ref={lockscreen}
-                 className='w-screen h-screen relative z-10  backdrop-blur-xl overflow-hidden duration-500'>
+                 className='w-screen h-screen relative z-10  backdrop-blur-xl overflow-hidden duration-500' onClick={()=>{inputRef.current.focus()}}>
                 <div ref={lockblur}
                      className='h-full w-full flex flex-col justify-center items-center flex-wrap z-40 duration-500'>
                     <div className={'absolute top-1/4'}>
@@ -60,22 +67,23 @@ const LockScreen = ({setLoggedIn}) => {
                         <p className='text-white text-center text-3xl jet'>
                             session0
                         </p>
-                        <form action="" className={'relative h-16 w-auto mx-auto'}>
+                        <form action="" className={'relative h-14 w-auto mx-auto loginform bg-zinc-100/10 rounded-2xl backdrop-blur-lg'} onSubmit={formsession}>
                             <div
-                                className={'flex flex-row flex-wrap min-w-16 max-w-fit gap-0.5 duration-300 pt-10 px-5 left-0 text-2xl mx-auto text-white'}
+                                className={' inputv flex flex-row flex-wrap min-w-14 max-w-fit gap-0.5 px-5 left-0 text-2xl mx-auto text-white translate-y-full'}
                                 ref={inputDRef}>
                                 {
                                     password.split('').map((pass, i) => {
                                         return (
                                             <div key={i}
-                                                 className={`w-0 h-0 aspect-square duration-300 my-auto opacity-0 bg-white rounded-full ${i === password.split('').length - 1 ? 'passwordchar' : ''}`}></div>
+                                                 className={`w-0 h-0 aspect-square my-auto duration-150 opacity-0 translate-y-3/4 bg-white rounded-full ${i === password.split('').length - 1 ? 'passwordchar' : ''}`}></div>
                                         )
                                     })
                                 }
                             </div>
-                            <input type="password"
-                                   className={'min-w-16 focus-visible:outline-0 -translate-y-1/2 mx-auto max-w-fit mb-5 text-transparent text-2xl '}
-                                   ref={inputRef} autoComplete={'true'} value={password} onChange={handlePassword}/>
+                            <input name={'password'}
+                                   type="password"
+                                   className={'min-w-16 focus-visible:outline-0 -translate-y-full mx-auto max-w-fit mb-5 text-transparent text-2xl '}
+                                   ref={inputRef} autoComplete={'true'} value={password} onChange={handlePassword} />
                         </form>
                         <div onClick={authenticateSession}
                              className='text-white bg-zinc-900/10 rounded-xl backdrop-blur-xs hover:backdrop-blur-md hover:scale-105 font-bold tracking-wider z-50 text-2xl cursor-pointer mt-10 px-3 text-center py-3 duration-150 '>Login
