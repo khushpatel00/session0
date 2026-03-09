@@ -1,9 +1,9 @@
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Clock from 'react-clock'
-import {useNavigate} from 'react-router'
+import { useNavigate } from 'react-router'
 import gsap from 'gsap';
 
-const LockScreen = ({setLoggedIn}) => {
+const LockScreen = ({ setLoggedIn }) => {
     const [value, setValue] = useState(new Date());
     const lockblur = useRef(null);
     const lockscreen = useRef(null);
@@ -14,7 +14,7 @@ const LockScreen = ({setLoggedIn}) => {
     const navigate = useNavigate();
 
     const handlePassword = (e) => {
-        const {value} = e.target
+        const { value } = e.target
         setPassword(value);
     }
 
@@ -40,11 +40,12 @@ const LockScreen = ({setLoggedIn}) => {
         if (setLoggedIn) {
             lockblur.current.classList.add('backdrop-blur-xl', 'scale-[110%]')
             setTimeout(() => {
-                desktopWallpaper.current.classList.remove('opacity-0')
-            }, 200);
+                lockblur.current.classList.add('opacity-0')
+            }, 100);
+            desktopWallpaper.current.classList.remove('opacity-0')
             setTimeout(() => {
                 navigate('/desktop')
-            }, 300)
+            }, 200)
         }
     }
 
@@ -56,12 +57,12 @@ const LockScreen = ({setLoggedIn}) => {
     return (
         <>
             <div id='lockscreen' ref={lockscreen}
-                 className='w-screen h-screen relative z-10  backdrop-blur-xl overflow-hidden duration-500' onClick={()=>{inputRef.current.focus()}}>
+                className='w-screen h-screen relative z-10  backdrop-blur-xl overflow-hidden duration-300' onClick={() => { inputRef.current.focus() }}>
                 <div ref={lockblur}
-                     className='h-full w-full flex flex-col justify-center items-center flex-wrap z-40 duration-500'>
+                    className='h-full w-full flex flex-col justify-center items-center flex-wrap z-40 duration-200'>
                     <div className={'absolute top-1/4'}>
                         <Clock className='z-40 block absolute top-0' value={value} hourMarksWidth={3}
-                               hourMarksLength={10} size={200}/>
+                            hourMarksLength={10} size={200} />
                     </div>
                     <div className={'absolute top-1/2'}>
                         <p className='text-white text-center text-3xl jet'>
@@ -75,26 +76,30 @@ const LockScreen = ({setLoggedIn}) => {
                                     password.split('').map((pass, i) => {
                                         return (
                                             <div key={i}
-                                                 className={`w-0 h-0 aspect-square my-auto duration-150 opacity-0 translate-y-3/4 bg-white rounded-full ${i === password.split('').length - 1 ? 'passwordchar' : ''}`}></div>
+                                                className={`w-0 h-0 aspect-square my-auto duration-150 opacity-0 translate-y-3/4 bg-white rounded-full ${i === password.split('').length - 1 ? 'passwordchar' : ''}`}></div>
                                         )
                                     })
                                 }
                             </div>
                             <input name={'password'}
-                                   type="password"
-                                   className={'min-w-16 focus-visible:outline-0 -translate-y-full mx-auto max-w-fit mb-5 text-transparent text-2xl '}
-                                   ref={inputRef} autoComplete={'true'} value={password} onChange={handlePassword} />
+                                type="password"
+                                className={'min-w-16 focus-visible:outline-0 -translate-y-full mx-auto max-w-fit mb-5 text-transparent text-2xl '}
+                                ref={inputRef} autoComplete={'true'} value={password} onChange={handlePassword} />
                         </form>
                         <div onClick={authenticateSession}
-                             className='text-white bg-zinc-900/10 rounded-xl backdrop-blur-xs hover:backdrop-blur-md hover:scale-105 font-bold tracking-wider z-50 text-2xl cursor-pointer mt-10 px-3 text-center py-3 duration-150 '>Login
+                            className='text-white bg-zinc-900/10 rounded-xl backdrop-blur-xs hover:backdrop-blur-md hover:scale-105 font-bold tracking-wider z-50 text-2xl cursor-pointer mt-10 px-3 text-center py-3 duration-150 '>Login
                         </div>
                     </div>
 
                 </div>
             </div>
             <div id="desktopWallpaper" ref={desktopWallpaper}
-                 className='w-screen h-screen absolute top-0 left-0 desktopWallpaper z-50 scale-[110%] overflow-hidden overflow-x-hidden overflow-y-hidden pointer-events-none opacity-0 duration-200'>
-                <div className='h-full w-full backdrop-blur-xl'></div>
+                className='absolute w-screen h-screen top-0 left-0 z-50 overflow-hidden overflow-y-hidden scale-[110%] duration-200 opacity-0'>
+                <div className='desktopWallpaper h-full w-full'>
+                    <div className='h-full w-full backdrop-blur-xl duration-75'>
+
+                    </div>
+                </div>
             </div>
         </>
     )

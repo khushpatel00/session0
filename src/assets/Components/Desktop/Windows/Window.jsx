@@ -2,7 +2,7 @@ import React from 'react'
 import Bar from './Bar'
 import Program from './Program'
 import { motion, useDragControls } from 'framer-motion'
-function Window({ className }) {
+function Window({ className, onClose }) {
     const dragControls = useDragControls();
     return (
         <motion.div drag dragConstraints={{
@@ -14,14 +14,14 @@ function Window({ className }) {
             dragListener={false}
             dragControls={dragControls}
 
-            dragElastic={0.1}
-            // dragMomentum={false}
+            // dragElastic={0.1}
+            dragMomentum={false}
             className={'relative w-[32vw] h-[28vh] top-1/4 pointer-events-auto' + className}>
             <div onPointerDown={(e) => {
                 console.log("drag start");
                 dragControls.start(e)
             }} >
-                <Bar />
+                <Bar onClose={onClose} />
             </div>
             <Program></Program>
         </motion.div>

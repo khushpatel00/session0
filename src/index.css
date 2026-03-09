@@ -11,13 +11,14 @@ html {
 .desktopWallpaper {
     background-image: url('/car_on_mars.jpg');
     background-size: cover;
-    background-position: center left;
+    background-position: center right;
     will-change: auto;
+    transition: 1s;
 }
 
 #lockscreen {
-    background-image: url('/astronaut.png');
-    /* background-image: url('/car_on_mars.jpg'); */
+    /* background-image: url('/astronaut.png'); */
+    background-image: url('/car_on_mars.jpg');
     background-size: cover;
     background-position: center right;
     will-change: auto;
